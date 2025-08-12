@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regalo Especial</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: all 0.5s ease;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #333;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 1em;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e91e63;
+    }
+
+    video {
+      display: none;
+      width: 100%;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="giftBox">
+    <h1>🎁 Te tengo un regalo especial</h1>
+    <button onclick="showSurprise()">Abrir regalo</button>
+    <video id="scareVideo" controls>
+      <source src="susto.mp4" type="video/mp4" />
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+
+  <script>
+    function showSurprise() {
+      const container = document.getElementById('giftBox');
+      const video = document.getElementById('scareVideo');
+      container.querySelector('h1').textContent = '😈 ¡Sorpresa!';
+      container.querySelector('button').style.display = 'none';
+      video.style.display = 'block';
+      video.play();
+    }
+  </script>
+</body>
+</html>
